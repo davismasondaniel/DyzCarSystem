@@ -31,6 +31,9 @@ Config['BeltClass'] = {
     [17] = true,
     [18] = true,
     [19] = true,
+    [20] = true,
+    [21] = true,
+    [22] = true,
 };
 
 Config['Directions'] = { [0] = 'North Bound', [1] = 'West Bound', [2] = 'South Bound', [3] = 'East Bound', [4] = 'North Bound' };
