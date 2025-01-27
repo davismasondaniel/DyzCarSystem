@@ -16,7 +16,7 @@ local cruiseSpeeding = 0
 
 local playerPed = nil;
 -- Thread
-Citizen.CreateThread(function()
+CreateThread(function()
     while true do
         if (currVeh ~= 0) then
             local position = GetEntityCoords(playerPed);
@@ -66,11 +66,11 @@ Citizen.CreateThread(function()
             })
         end
 
-        Citizen.Wait(currVeh == 0 and 500 or 100);
+        Wait(currVeh == 0 and 500 or 100);
     end
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
     while true do
         if (currVeh ~= 0) then
             local position = GetEntityCoords(playerPed);
@@ -145,11 +145,11 @@ Citizen.CreateThread(function()
             end
         end
 
-        Citizen.Wait(currVeh == 0 and 500 or 5);
+        Wait(currVeh == 0 and 500 or 5);
     end
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
     while true do
         playerPed = PlayerPedId();
         local veh = GetVehiclePedIsIn(playerPed, false);
@@ -172,6 +172,6 @@ Citizen.CreateThread(function()
             end
         end
 
-        Citizen.Wait(500);
+        Wait(500);
     end
 end)
