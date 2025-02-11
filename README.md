@@ -1,6 +1,6 @@
 ## Note
 ```
-add okokNotify
+add okokNotify https://okok.tebex.io/package/4724993
 Currently, I have another project to do. So I might not have time to fix bugs or add features. Sorry :(
 ```
 
