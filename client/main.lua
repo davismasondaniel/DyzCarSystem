@@ -79,6 +79,7 @@ CreateThread(function()
             if (IsControlJustReleased(0, Config['seatbeltInput']) and vehData['hasBelt']) then 
                 seatbeltEnabled = not seatbeltEnabled;
                 triggerNUI("toggleBelt", { hasBelt = vehData['hasBelt'], beltOn = seatbeltEnabled });
+                exports['okokNotify']:Alert("seatbelt", "on/off", 0.1, 'info')
             end
             
             local prevSpeed = vehData['currSpd'];
@@ -92,7 +93,7 @@ CreateThread(function()
                 if (vehIsMovingFwd and (prevSpeed > (Config['seatbeltEjectSpeed']/2.237)) and (vehAcc > (Config['seatbeltEjectAccel']*9.81))) then
                     SetEntityCoords(playerPed, position.x, position.y, position.z - 0.47, true, true, true);
                     SetEntityVelocity(playerPed, vehData['prevVelocity'].x, vehData['prevVelocity'].y, vehData['prevVelocity'].z);
-                    Citizen.Wait(1);
+                    Wait(1);
                     SetPedToRagdoll(playerPed, 1000, 1000, 0, 0, 0, 0);
                 else
                     vehData['prevVelocity'] = GetEntityVelocity(currVeh);
