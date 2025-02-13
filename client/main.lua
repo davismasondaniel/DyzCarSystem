@@ -79,7 +79,6 @@ CreateThread(function()
             if (IsControlJustReleased(0, Config['seatbeltInput']) and vehData['hasBelt']) then 
                 seatbeltEnabled = not seatbeltEnabled;
                 triggerNUI("toggleBelt", { hasBelt = vehData['hasBelt'], beltOn = seatbeltEnabled });
-                exports['okokNotify']:Alert("seatbelt", "on/off", 0.1, 'info')
             end
             
             local prevSpeed = vehData['currSpd'];
